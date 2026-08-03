@@ -1,0 +1,63 @@
+\begin{frame}[fragile]{Using UHD from Python (2/7)}
+\vspace{-0.5cm}
+\footnotesize
+
+\begin{itemize}
+    \item \textbf{\textcolor{DarkBlue}{Step 1: Enable the UHD Python API}}
+\end{itemize}
+
+\hspace{2.8em}
+\parbox{0.88\linewidth}{
+\footnotesize
+While configuring UHD, enable the Python API by passing
+\texttt{-DENABLE\_PYTHON\_API=ON} to CMake. This builds the UHD Python
+module along with the UHD C++ library.
+}
+
+\vspace{0.2cm}
+
+\scriptsize
+\begin{Verbatim}[xleftmargin=3.8em,breaklines,breaksymbolleft={},breaksymbolright={}]
+cmake ../ -DCMAKE_BUILD_TYPE=Release \
+-DENABLE_PYTHON_API=ON \
+-DPYTHON_EXECUTABLE=$(which python3)
+\end{Verbatim}
+
+
+
+
+
+\hspace{2.8em}
+\parbox{0.88\linewidth}{
+\scriptsize
+\textbf{\textcolor{DarkBlue}{Verify the Enabled Components}}
+
+During CMake configuration, verify that
+\textbf{LibUHD - Python API} appears under the enabled components.
+This confirms that the UHD Python bindings will be built.
+}
+\vspace{0.5cm}
+\begin{itemize}
+    \item \textbf{\textcolor{DarkBlue}{Step 2: Build and Install UHD}}
+\end{itemize}
+
+\hspace{2.8em}
+\parbox{0.88\linewidth}{
+\footnotesize
+After enabling the Python API, compile UHD and install it system-wide.
+This builds the Python bindings along with the UHD libraries.
+}
+
+\vspace{0.2cm}
+
+\scriptsize
+\begin{Verbatim}[xleftmargin=3.8em]
+make -j$(nproc)
+sudo make install
+\end{Verbatim}
+
+\vspace{0.2cm}
+
+
+
+\end{frame}

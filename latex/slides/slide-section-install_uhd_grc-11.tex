@@ -1,0 +1,44 @@
+\begin{frame}[fragile]{GNU Radio Installation (2/7)}
+
+\footnotesize
+
+\begin{itemize}
+    \item \textbf{Create the build directory and move into it.}
+\end{itemize}
+
+\scriptsize
+\begin{lstlisting}[frame=none,xleftmargin=2.8em,breaklines=true]
+mkdir build
+cd build
+\end{lstlisting}
+
+\footnotesize
+
+\begin{itemize}
+    \item \textbf{Configure the GNU Radio build using CMake.}
+\end{itemize}
+
+\scriptsize
+\begin{lstlisting}[frame=none,xleftmargin=2.8em,breaklines=true]
+cmake .. -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=$(which python3) -DENABLE_GR_SOAPY=ON -DENABLE_GR_UHD=ON -DENABLE_PYTHON=ON
+\end{lstlisting}
+
+\footnotesize
+
+\begin{itemize}
+    \item \textbf{Build, install, and update the shared library cache.}
+\end{itemize}
+
+\scriptsize
+\begin{lstlisting}[frame=none,xleftmargin=2.8em]
+# Build using all CPU cores
+make -j$(nproc)
+
+# Install system-wide
+sudo make install
+
+# Update library paths
+sudo ldconfig
+\end{lstlisting}
+
+\end{frame}

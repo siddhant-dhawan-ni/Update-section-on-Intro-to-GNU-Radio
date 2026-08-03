@@ -1,0 +1,40 @@
+\begin{frame}[fragile]{Installation of UHD from Source Code (2/5)}
+
+\footnotesize
+
+\begin{itemize}
+    \item \textbf{Step 3: Checkout UHD version v4.9.0.1.}
+\end{itemize}
+
+\scriptsize
+\begin{Verbatim}[xleftmargin=3.8em,breaklines,breaksymbolleft={},breaksymbolright={}]
+# Fetch all tags
+git fetch --all --tags
+
+# Verify tag exists
+git tag | grep v4.9.0.1
+
+# Checkout version
+git checkout tags/v4.9.0.1
+
+# Optional: create a branch at this tag (keeps HEAD clean)
+git checkout -b v4.9.0.1-build
+\end{Verbatim}
+
+\footnotesize
+
+\begin{itemize}
+    \item \textbf{Step 4: Prepare a clean build directory.}
+\end{itemize}
+
+\scriptsize
+\begin{Verbatim}[xleftmargin=3.8em,breaklines,breaksymbolleft={},breaksymbolright={}]
+cd host
+
+rm -rf build
+
+mkdir build
+cd build
+\end{Verbatim}
+
+\end{frame}

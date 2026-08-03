@@ -1,0 +1,17 @@
+\begin{frame}[fragile]{Installation of UHD from Source Code (5/5)}
+\vspace{-3.0cm}
+\footnotesize
+
+\begin{itemize}
+    \item \textbf{\textcolor{DarkBlue}{Update \texttt{\$HOME/.bashrc} file to set the envvironment variable}}
+\end{itemize}
+
+\footnotesize
+\begin{Verbatim}[xleftmargin=3.8em,breaklines,breaksymbolleft={},breaksymbolright={}]
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+export PATH=/usr/local/bin:$PATH
+echo 'export UHD_IMAGES_DIR=/usr/local/share/uhd/images/' >> ~/.bashrc
+source ~/.bashrc
+\end{Verbatim}
+
+\end{frame}

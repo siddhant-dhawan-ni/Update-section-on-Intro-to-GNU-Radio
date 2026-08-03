@@ -1,0 +1,29 @@
+\begin{frame}[fragile]{Install VOLK (2/2)}
+
+\footnotesize
+\vspace{-1.8cm}
+\begin{itemize}
+    \item \textbf{Build and Install VOLK}
+\end{itemize}
+
+\scriptsize
+
+\begin{Verbatim}[xleftmargin=2.8em,breaklines,breaksymbolleft={},breaksymbolright={},breakanywhere]
+cmake -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3 ../
+make -j4
+sudo make install
+
+sudo ldconfig
+\end{Verbatim}
+
+\footnotesize
+\vspace{0.5cm}
+\begin{itemize}
+    \item \textbf{Note:}
+    \begin{itemize}
+        \item \texttt{sudo ldconfig} updates the shared library cache so the
+        newly installed VOLK library can be located by the system.
+    \end{itemize}
+\end{itemize}
+
+\end{frame}

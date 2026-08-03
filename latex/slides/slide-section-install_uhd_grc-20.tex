@@ -1,0 +1,29 @@
+\begin{frame}[fragile]{Installing Multiple Versions of UHD (4/5)}
+\vspace{-1.5cm}
+\footnotesize
+
+\begin{itemize}
+    \item \textbf{\textcolor{DarkBlue}{Step 6: Verify UHD 4.9.0.0}}
+\end{itemize}
+
+\vspace{0.cm}
+
+\begin{center}
+\includegraphics[width=0.85\linewidth]{latex/jpg_png/image _step 6 verification of local uhd.jpg}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{itemize}
+    \item \textbf{\textcolor{DarkBlue}{Step 7: Download FPGA Images}}
+\end{itemize}
+
+\scriptsize
+
+\begin{Verbatim}[xleftmargin=3em,breaklines]
+mkdir -p ~/installs/uhd_4900/share/uhd/images
+uhd_images_downloader -i ~/installs/uhd_4900/share/uhd/images
+uhd_images_downloader -i ~/installs/uhd_4900/share/uhd/images -t mender -t x4xx
+\end{Verbatim}
+
+\end{frame}

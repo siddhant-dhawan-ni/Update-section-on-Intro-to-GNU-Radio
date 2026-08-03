@@ -1,0 +1,54 @@
+\begin{frame}[fragile]{Installation of UHD from Source Code (1/5)}
+
+\footnotesize
+
+\begin{itemize}
+    \item \textbf{UHD can be installed in two ways:}
+    \begin{itemize}
+        \item \textbf{Binary Installation:} Installs pre-built UHD packages using the operating system package manager (e.g., \texttt{apt}). It is simple and quick, but may not provide the latest UHD version.
+
+        \item \textbf{Source Code Installation:} Downloads the UHD source code from GitHub and builds it locally. This provides access to the latest features, bug fixes, and allows customization during compilation.
+    \end{itemize}
+\end{itemize}
+
+\begin{tcolorbox}[
+    colback=blue!5,
+    colframe=DarkBlue,
+    boxrule=0.5pt,
+    arc=2pt,
+    left=2mm,
+    right=2mm,
+    top=1mm,
+    bottom=1mm
+]
+\footnotesize
+\textbf{Note:} The following steps describe the installation of UHD from \textbf{source code}.
+\end{tcolorbox}
+
+
+
+\begin{itemize}
+    \item \textbf{Step 1: Go to the workspace directory.}
+\end{itemize}
+
+\scriptsize
+\begin{Verbatim}[xleftmargin=3.8em,breaklines,breaksymbolleft={},breaksymbolright={}]
+cd $HOME/git
+\end{Verbatim}
+
+\footnotesize
+
+\begin{itemize}
+    \item \textbf{\textcolor{DarkBlue}{Step 2: Clone the UHD repository.}}
+\end{itemize}
+
+\scriptsize
+\begin{Verbatim}[xleftmargin=3.8em,breaklines,breaksymbolleft={},breaksymbolright={}]
+# Clone UHD repository
+git clone https://github.com/EttusResearch/uhd.git
+
+# Go into UHD directory
+cd uhd
+\end{Verbatim}
+
+\end{frame}

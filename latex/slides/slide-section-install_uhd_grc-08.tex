@@ -1,0 +1,34 @@
+\begin{frame}[fragile]{Install VOLK (1/2)}
+
+\footnotesize
+\vspace{-0.5cm}
+\begin{itemize}
+    \item \textbf{About VOLK}
+
+    \begin{itemize}
+        \item VOLK (Vector-Optimized Library of Kernels) is a high-performance
+        signal processing library used by GNU Radio.
+        \item It automatically detects the processor's SIMD capabilities
+        (e.g., AVX, AVX2, AVX-512, NEON) and selects the fastest implementation
+        for DSP operations.
+    \end{itemize}
+\vspace{0.3cm}
+    \item \textbf{Install VOLK v3.3.0}
+\end{itemize}
+
+\scriptsize
+
+\begin{Verbatim}[xleftmargin=2.8em,breaklines,breaksymbolleft={},breaksymbolright={}]
+cd $HOME/git
+
+git clone --recursive https://github.com/gnuradio/volk.git
+
+cd volk
+
+mkdir build
+cd build
+
+git checkout v3.3.0
+\end{Verbatim}
+
+\end{frame}

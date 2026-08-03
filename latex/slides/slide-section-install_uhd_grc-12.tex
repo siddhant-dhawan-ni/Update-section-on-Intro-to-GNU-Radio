@@ -1,0 +1,43 @@
+\begin{frame}[fragile]{GNU Radio Installation (3/7)}
+\vspace{-1.5cm}
+\footnotesize
+
+\begin{itemize}
+    \item \textbf{Update the PYTHONPATH for UHD and GNU Radio.}
+
+        \scriptsize
+        UHD Python files are split between:
+
+        \begin{itemize}
+            \item \textbf{GNU Radio UHD blocks}
+            \begin{itemize}
+                \item \texttt{/usr/local/lib/python3.12/dist-packages/gnuradio/uhd}
+            \end{itemize}
+
+            \item \textbf{Standalone UHD Python API}
+            (\texttt{libpyuhd*.so}, \texttt{\_\_init\_\_.py})
+            \begin{itemize}
+                \item \texttt{/usr/local/lib/python3.12/site-packages/uhd}
+            \end{itemize}
+        \end{itemize}
+\vspace{0.5cm}
+        So, to make Python see everything, you need both
+        \texttt{site-packages} and \texttt{dist-packages}
+        in your \texttt{PYTHONPATH}.
+    \end{itemize}
+
+\vspace{0.2cm}
+
+\scriptsize
+\begin{Verbatim}[
+    xleftmargin=3.8em,
+    breaklines,
+    breakanywhere,
+    breaksymbolleft={},
+    breaksymbolright={}
+]
+echo 'export PYTHONPATH=/usr/local/lib/python3.12/dist-packages:/usr/local/lib/python3.12/site-packages:$PYTHONPATH' >> ~/.bashrc
+source ~/.bashrc
+\end{Verbatim}
+
+\end{frame}

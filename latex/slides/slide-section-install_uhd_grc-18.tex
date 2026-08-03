@@ -1,0 +1,41 @@
+\begin{frame}[fragile]{Installing Multiple Versions of UHD (2/5)}
+\vspace{-0.9cm}
+\footnotesize
+
+\begin{itemize}
+    \item \textbf{\textcolor{DarkBlue}{Step 3: Configure UHD 4.9.0.0}}
+\end{itemize}
+
+\scriptsize
+
+\begin{Verbatim}[xleftmargin=3em,breaklines,breakanywhere]
+cd host
+mkdir build
+cd build
+cmake .. \
+-DCMAKE_BUILD_TYPE=Release \
+-DCMAKE_INSTALL_PREFIX=$HOME/installs/uhd_4900 \
+-DENABLE_PYTHON_API=ON
+\end{Verbatim}
+
+\vspace{0.5cm}
+
+\begin{itemize}
+    \item \textbf{\textcolor{DarkBlue}{Step 4: Build and Install}}
+\end{itemize}
+
+\scriptsize
+
+\begin{Verbatim}[xleftmargin=3em]
+make -j$(nproc)
+make install
+\end{Verbatim}
+
+\footnotesize
+
+\textbf{Note:}
+
+No \texttt{sudo} is required because UHD is installed in a local directory
+(\texttt{\$HOME/installs/uhd\_4900}) instead of \texttt{/usr/local}.
+
+\end{frame}

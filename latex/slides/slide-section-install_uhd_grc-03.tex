@@ -1,0 +1,32 @@
+\begin{frame}[fragile]{Installation of UHD from Source Code (3/5)}
+%\vspace{-0.7cm}
+\footnotesize
+
+\begin{itemize}
+    \item \textbf{Step 5: Build and install UHD.}
+\end{itemize}
+
+\scriptsize
+\begin{Verbatim}[xleftmargin=3.8em,breaklines,breakanywhere,breaksymbolleft={},breaksymbolright={}]
+# Configure build
+cmake ../ -DUHD_RELEASE_MODE=ON -DCMAKE_BUILD_TYPE=Release -DENABLE_PYTHON_API=ON -DPYTHON_EXECUTABLE=$(which python)
+
+# Build
+make -j$(nproc)
+
+# Install
+sudo make install
+
+# Update linker cache
+sudo ldconfig
+\end{Verbatim}
+\vspace{0.5cm}
+\begin{itemize}
+    \item \textbf{Step 6: Verify the UHD installation.}
+\end{itemize}
+
+\scriptsize
+\begin{Verbatim}[xleftmargin=3.8em,breaklines,breakanywhere,breaksymbolleft={},breaksymbolright={}]
+uhd_config_info --print-all
+\end{Verbatim}
+\end{frame}

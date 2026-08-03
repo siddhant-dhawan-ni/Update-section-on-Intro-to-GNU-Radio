@@ -1,0 +1,46 @@
+\begin{frame}[fragile]{Installing Multiple Versions of UHD (1/5)}
+
+\textbf{\textcolor{red}{NEEL FIXME (add section on installing multiple versions of GNU Radio)}}
+
+\footnotesize
+
+Installing multiple UHD versions allows you to maintain a stable production
+installation while testing or validating applications with a different UHD
+release.
+
+\begin{itemize}
+    \item UHD \textbf{4.9.0.1} is installed as the primary system version in
+    \texttt{/usr/local}.
+
+    \item UHD \textbf{4.9.0.0} is installed in a separate local directory
+    (\texttt{\$HOME/installs/uhd\_4900}) so that both versions can coexist
+    without affecting each other.
+\end{itemize}
+
+\vspace{0.2cm}
+
+\begin{itemize}
+    \item \textbf{\textcolor{DarkBlue}{Step 1: Install build dependencies}}
+\end{itemize}
+
+\scriptsize
+\begin{Verbatim}[xleftmargin=3.8em]
+sudo apt update
+\end{Verbatim}
+
+\footnotesize
+\vspace{0.5cm}
+\begin{itemize}
+    \item \textbf{\textcolor{DarkBlue}{Step 2: Clone UHD 4.9.0.0}}
+\end{itemize}
+
+\scriptsize
+\begin{Verbatim}[xleftmargin=3.8em]
+mkdir -p ~/src
+cd ~/src
+git clone https://github.com/EttusResearch/uhd.git uhd_4900
+cd uhd_4900
+git checkout v4.9.0.0
+\end{Verbatim}
+
+\end{frame}

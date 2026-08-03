@@ -1,0 +1,229 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usetheme{Madrid}
+\setbeamerfont{normal text}{size=\small}
+
+% ================================
+% Packages
+% ================================
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{tikz}
+\usepackage{helvet}
+\usepackage{ragged2e}
+\usepackage{fvextra}
+\usepackage{multirow}
+\usepackage{tcolorbox}
+\usepackage{alltt}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{lipsum}
+
+% ================================
+% Colors
+% ================================
+\definecolor{DarkBlue}{RGB}{0,0,54}
+\definecolor{DarkGreen}{RGB}{0,87,61}
+\definecolor{Green}{RGB}{0,173,124}
+\definecolor{lightgreen}{RGB}{124,207,139}
+
+% ================================
+% Generic metadata macros
+% ================================
+\newcommand{\PresentationTitle}{Generic Team Training Template}
+\newcommand{\PresentationSubtitle}{Subtitle or Topic Goes Here}
+\newcommand{\PresentationAuthors}{Author One \\ author.one@example.com \\[0.3em] Author Two \\ author.two@example.com}
+\newcommand{\PresentationVersion}{v1.0}
+\newcommand{\PresentationRevision}{Revision 1.0.0}
+\newcommand{\FooterLogo}{jpg_png/logo.png}
+\newcommand{\TitleBackground}{jpg_png/background.png}
+
+% ================================
+% Listings
+% ================================
+\lstset{
+  basicstyle=\ttfamily\scriptsize,
+  breaklines=true,
+  breakatwhitespace=true,
+  frame=single,
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+  tabsize=2
+}
+
+% ================================
+% Tcolorbox setup
+% ================================
+\tcbset{
+  colback=black!2,
+  colframe=black!35,
+  boxrule=0.4pt,
+  arc=2pt,
+  left=2mm,right=2mm,top=1mm,bottom=1mm
+}
+
+\newtcolorbox{terminalbox}{
+  enhanced,
+  breakable,
+  colback=black!2,
+  colframe=black!35,
+  boxrule=0.4pt,
+  arc=2pt,
+  left=2mm,right=2mm,top=1mm,bottom=1mm
+}
+
+% ================================
+% Section intro macro
+% ================================
+\newcommand{\SectionIntro}[3]{
+\begin{frame}
+\hypertarget{#2}{}
+
+\begin{beamercolorbox}[wd=\paperwidth,ht=3ex,dp=1.5ex,center]{}
+  {\color{black}\Large\bfseries #1}
+\end{beamercolorbox}
+
+\vspace{0.5cm}
+
+\begin{tcolorbox}[
+  colback=black!2,
+  colframe=DarkGreen,
+  boxrule=0.7pt,
+  arc=2pt,
+  left=2mm,right=2mm,top=1mm,bottom=1mm
+]
+\begin{itemize}
+#3
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+}
+
+% ================================
+% Beamer styling
+% ================================
+\setbeamertemplate{headline}{}
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamercolor{item}{fg=DarkGreen}
+\setbeamercolor{subitem}{fg=DarkGreen}
+\setbeamercolor{subsubitem}{fg=DarkGreen}
+
+\setbeamercolor{title}{bg=DarkGreen,fg=white}
+\setbeamercolor{subtitle}{fg=white}
+\setbeamercolor{author}{fg=white}
+\setbeamercolor{date}{fg=white}
+\setbeamercolor{frametitle}{fg=DarkBlue,bg=white}
+
+\setbeamercolor{title in head/foot}{bg=DarkGreen, fg=white}
+\setbeamercolor{frame number in head/foot}{bg=DarkBlue, fg=white}
+
+% ================================
+% Footline
+% ================================
+\setbeamertemplate{footline}{
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.85\paperwidth, ht=2.5ex, dp=1.2ex, center]{title in head/foot}
+      \color{white}\insertshorttitle\hspace{1em}|\hspace{1em}\PresentationVersion
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.15\paperwidth, ht=2.5ex, dp=1.2ex, center]{frame number in head/foot}
+      \color{white}\insertframenumber/\inserttotalframenumber
+    \end{beamercolorbox}%
+  }
+}
+
+\addtobeamertemplate{footline}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south east, xshift=-0.2cm, yshift=0.15cm]
+      at (current page.south east)
+      {\includegraphics[height=0.9cm]{\FooterLogo}};
+  \end{tikzpicture}
+}{}
+
+% ================================
+% Title background
+% ================================
+\usebackgroundtemplate{%
+  \includegraphics[width=\paperwidth,height=.85\paperheight]{\TitleBackground}
+}
+
+% ================================
+% Metadata
+% ================================
+\title[\PresentationTitle]{\textbf{\PresentationTitle}}
+\subtitle{\PresentationSubtitle}
+\author{\PresentationAuthors \\ \PresentationRevision}
+\date{}
+
+% ================================
+% TOC style
+% ================================
+\setbeamertemplate{section in toc}{%
+  \leavevmode\leftskip=0pt%
+  \textcolor{black}{\large$\bullet$}\hspace{0.6em}\inserttocsection\par
+}
+
+\setbeamertemplate{subsection in toc}{%
+  \leavevmode\leftskip=1.5em%
+  \textcolor{black}{\small$\bullet$}\hspace{0.6em}\inserttocsubsection\par
+}
+
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{subsection in toc}{fg=black}
+
+% ================================
+% Document
+% ================================
+\begin{document}
+
+\begin{frame}[noframenumbering]
+  \titlepage
+\end{frame}
+
+\usebackgroundtemplate{}
+
+
+
+% ================================
+% Section 1
+% ================================
+
+\input{latex/slides/slide-section-install_uhd_grc-01}
+\input{latex/slides/slide-section-install_uhd_grc-02}
+\input{latex/slides/slide-section-install_uhd_grc-03}
+\input{latex/slides/slide-section-install_uhd_grc-04}
+\input{latex/slides/slide-section-install_uhd_grc-04a}
+\input{latex/slides/slide-section-install_uhd_grc-05}
+\input{latex/slides/slide-section-install_uhd_grc-06}
+\input{latex/slides/slide-section-install_uhd_grc-07}
+\input{latex/slides/slide-section-install_uhd_grc-08}
+\input{latex/slides/slide-section-install_uhd_grc-09}
+\input{latex/slides/slide-section-install_uhd_grc-10}
+\input{latex/slides/slide-section-install_uhd_grc-11}
+\input{latex/slides/slide-section-install_uhd_grc-12}
+\input{latex/slides/slide-section-install_uhd_grc-13}
+\input{latex/slides/slide-section-install_uhd_grc-14}
+\input{latex/slides/slide-section-install_uhd_grc-15}
+\input{latex/slides/slide-section-install_uhd_grc-16}
+\input{latex/slides/slide-section-install_uhd_grc-17}
+\input{latex/slides/slide-section-install_uhd_grc-18}
+\input{latex/slides/slide-section-install_uhd_grc-19}
+\input{latex/slides/slide-section-install_uhd_grc-20}
+\input{latex/slides/slide-section-install_uhd_grc-21}
+\input{latex/slides/slide-section-install_uhd_grc-22}
+\input{latex/slides/slide-section-install_uhd_grc-23}
+\input{latex/slides/slide-section-install_uhd_grc-24}
+\input{latex/slides/slide-section-install_uhd_grc-25}
+\input{latex/slides/slide-section-install_uhd_grc-26}
+\input{latex/slides/slide-section-install_uhd_grc-27}
+\input{latex/slides/slide-section-install_uhd_grc-28}
+\input{latex/slides/slide-section-install_uhd_grc-29}
+\input{latex/slides/slide-section-install_uhd_grc-30}
+\input{latex/slides/slide-section-install_uhd_grc-31}
+\input{latex/slides/slide-section-install_uhd_grc-32}
+\input{latex/slides/slide-section-install_uhd_grc-33}
+
+
+\end{document}

@@ -1,0 +1,29 @@
+\begin{frame}[fragile]{GNU Radio Installation (1/7)}
+\vspace{-0.7cm}
+\footnotesize
+
+\begin{itemize}
+    \item Update Ubuntu packages and install required dependencies.
+\end{itemize}
+\scriptsize
+\begin{Verbatim}[xleftmargin=2.8em,breaklines,breaksymbolleft={},breaksymbolright={}]
+sudo apt update && sudo apt upgrade -y && sudo apt install -y git cmake g++ build-essential autoconf automake libtool ccache doxygen wget python3-dev python3-numpy python3-mako python3-sphinx python3-apt python3-click python3-click-plugins python3-click-threading python3-gi python3-gi-cairo python3-lxml python3-opengl python3-pyqt5 python3-requests
+\end{Verbatim}
+\begin{itemize}
+    \item Clone GNU Radio v3.10.12 and prepare the build.
+\end{itemize}
+
+\scriptsize
+\begin{Verbatim}[xleftmargin=2.8em,breaklines,breaksymbolleft={},breaksymbolright={}]
+cd ~/workarea
+rm -rf gnuradio
+
+git clone --recursive https://github.com/gnuradio/gnuradio.git
+cd gnuradio
+
+git fetch --all --tags
+git tag | grep 3.10.12
+git checkout tags/v3.10.12.0
+git checkout -b v3.10.12-build
+\end{Verbatim}
+\end{frame}

@@ -1,0 +1,41 @@
+\begin{frame}[fragile]{Using UHD from Python (1/7)}
+\vspace{-1.0cm}
+\footnotesize
+
+The UHD Python API provides Python bindings for the UHD C++ API using
+\textbf{pybind11}. It exposes most of the UHD C++ functionality, allowing
+users to control USRP devices directly from Python applications.
+
+\vspace{0.3cm}
+
+\begin{itemize}
+    \item \textbf{\textcolor{DarkBlue}{What is the UHD Python API?}}
+\end{itemize}
+
+\hspace{2.8em}
+\parbox{0.88\linewidth}{
+\footnotesize
+The UHD Python API is included as part of the standard UHD release and
+enables users to configure USRP devices, stream IQ samples, and access
+most UHD features directly from Python without writing C++ code.
+}
+
+\vspace{0.3cm}
+
+\begin{itemize}
+    \item \textbf{\textcolor{DarkBlue}{Reference Documentation}}
+\end{itemize}
+
+\hspace{2.8em}
+\scriptsize
+\url{https://files.ettus.com/manual/page_python.html}
+
+\vspace{0.35cm}
+
+\begin{itemize}
+    \item Python API is generated using \textbf{pybind11}.
+    \item Almost all UHD C++ APIs are available in Python.
+    \item Ideal for rapid prototyping and SDR application development.
+\end{itemize}
+
+\end{frame}
